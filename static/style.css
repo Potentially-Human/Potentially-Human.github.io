@@ -1,7 +1,7 @@
 body {
     background-color: #010409;
     color: #e6edf3;
-    font-weight: 400
+    font-weight: 400;
     margin: 0px;
 }
 
@@ -9,10 +9,35 @@ body {
     font-weight: 600;
     position: absolute; 
     width: 100%; 
-    height: 100px; 
-    padding: 20px; 
+    height: 400px; 
+    vertical-align: middle;
 }
 
 .menu-icon {
-    vertical-align: middle;
+    height: 20px;
+    background-image: url("assets/menu.png");
+    left: 10px;
+}
+
+.sidenav {
+    height: 100%;
+    padding: 20px;
+    border: 1px, solid, darkslategray; 
+}
+
+.close-sidebar {
+    height: 15px; 
+    right: 0px;
+    background-image: url("assets/menu.png")
+}
+
+.overlay {
+    background-color: #979fab;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sidenav-content {
+    
 }
