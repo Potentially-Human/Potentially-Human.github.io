@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="static/style.css">
+    <script src="static/search.js"></script>
     <script src="static/script.js"></script>
 </head>
 <body>
     <div class="navbar">
         <div class="navbar-container">
-            <div class="menu-icon"></div>
+            <div class="menu-icon button"></div>
+            <h3 class="project-title">Home</h3>
+            <div class="search-window">
+                <div class="search-area">
+                    <div class="search-icon button"></div>
+                    <input type="text" class="search-bar" placeholder="Search Projects">
+                </div>
+
+                <ul class="search-results">
+                    
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -20,12 +32,16 @@
 
     <div class="sidenav">
         <div class="sidenav-header">
-            <div class="close-sidebar"></div>
+            <h3 style="margin: 0px;">Projects</h3>
+            <div class="close-sidebar button"></div>
         </div>
         
         <div class="sidenav-content">
-            Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-
+            <ul class="sidenav-links">
+                <li class="sidenav-link">
+                    <a href="new.html">New Project</a>
+                </li>
+            </ul>
         </div>
     </div>
 
