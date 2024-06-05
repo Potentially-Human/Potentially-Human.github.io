@@ -5,11 +5,19 @@ window.addEventListener("load", (event) => {
     const searchResults = document.querySelector(".search-results");
 
     for (let i = 0; i < projects.length; i++) {
-        const li = document.createElement("li"); 
-        li.classList.add("sidenav-link");
-        li.innerHTML = "<a href='" + projects[i][1] + "'>" + projects[i][0] + "</a>";
-        document.querySelector(".sidenav-links").appendChild(li);
+        const a = document.createElement("a");
+        a.innerHTML = "<li class='sidenav-link'>" + projects[i][0] + "</li>";
+        a.href = projects[i][1];
+        document.querySelector(".sidenav-links").appendChild(a);
     }
+
+    for (let i = 0; i < tools.length; i++) {
+        const li = document.createElement("li");
+        li.classList.add("tools-item");
+        li.innerHTML = '<a target="_blank" href="' + tools[i][1] + '" class="tools-link"><span class="tool-icon icon" style="background-image: url(static/assets/' + (tools[i][2] === undefined ? '' : tools[i][2]) + ');"></span><span class="tool-text">' + tools[i][0] + '</span></a>';
+        document.querySelector(".tools-list").append(li);
+    }
+    document.querySelector(".tools-window").style.height = String(30 * tools.length + 2) + "px";
 
     document.querySelector(".menu-icon").addEventListener("click", (event) => {     
         sidenav.style.display = "block";
@@ -20,7 +28,9 @@ window.addEventListener("load", (event) => {
         ], {
             duration: 300,
             iterations: 1,
-        })
+        });
+
+        document.querySelector(".tools-window").style.display = "none";
     });
 
     document.querySelector(".close-sidebar").addEventListener("click", (event) => {
@@ -56,6 +66,8 @@ window.addEventListener("load", (event) => {
             li.innerHTML = result;
             searchResults.appendChild(li);
         }
+
+        document.querySelector(".tools-window").style.display = "none";
     });
 
     overlay.addEventListener("click", (event) => {
@@ -97,5 +109,22 @@ window.addEventListener("load", (event) => {
         }
     });
 
+    document.querySelector(".content").addEventListener("click", (event) => {
+        document.querySelector(".tools-window").style.display = "none";
+    })
 
+    document.querySelector(".tools").addEventListener("click", (event) => {
+        if (document.querySelector(".tools-window").style.display == "block") {
+            document.querySelector(".tools-window").style.display = "none";
+        } else {
+            document.querySelector(".tools-window").style.display = "block";
+            document.querySelector(".tools-window").animate([
+                {transform: "translateY(-100px)"}, 
+                {transform: "translateY(0px)"}, 
+            ], {
+                duration: 100,
+                iterations: 1,
+            });
+        }
+    })
 })

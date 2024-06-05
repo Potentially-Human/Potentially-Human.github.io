@@ -1,16 +1,21 @@
 // List the project names here!
 
-projects = [
-    ["Google", "https://google.com"], 
-    ["Wolfram|Alpha", "https://wolframalpha.com"], 
+var projects = [
     ["Home", "index.html"],
 ]
 
+var tools = [
+    ["Wolfram|Alpha", "https://wolframalpha.com", "wolfram.ico",], 
+    ["Dalle-3", "https://www.bing.com/images/create", "image-generator.png"],
+    ["Copilot", "https://copilot.microsoft.com/", "copilot.png"],
+    ["CharGPT", "https://chatgpt.com/", "chatGPT.png"],
+]
 
 function searchProjects(query) {
     let results = [];
     let unsortedResults = []
-    for (project of projects) {
+    let projectsAndTools = projects.concat(tools);
+    for (project of projectsAndTools) {
         projectName = project[0];
         if (projectName.toLowerCase().includes(query.toLowerCase())) {
             var regEx = new RegExp(query.toLowerCase(), "ig");
