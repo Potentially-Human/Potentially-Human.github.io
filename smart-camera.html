@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/smart-camera.css">
     <link rel="shortcut icon" href="static/assets/icon.ico" type="image/x-icon">
     <script src="static/search.js"></script>
     <script src="static/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+
 </head>
 <body>
     <div class="navbar">
@@ -39,7 +45,10 @@
 
     <div class="content-wrapper">
         <div class="content">
-            Hello! I might be a human. 
+            <div id="cam-view" class="live-view">
+                <button class="enable-webcam"></button>
+                <video class="webcam" autoplay muted width="640" height="480"></video>
+            </div>
         </div>
     </div>
 
@@ -57,5 +66,7 @@
     </div>
 
     <div class="overlay"></div>
+
+    <script src="static/smart-camera.js"></script>
 </body>
 </html>

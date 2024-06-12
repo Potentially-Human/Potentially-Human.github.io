@@ -8,7 +8,7 @@ var tools = [
     ["Wolfram|Alpha", "https://wolframalpha.com", "wolfram.ico",], 
     ["Dalle-3", "https://www.bing.com/images/create", "image-generator.png"],
     ["Copilot", "https://copilot.microsoft.com/", "copilot.png"],
-    ["CharGPT", "https://chatgpt.com/", "chatGPT.png"],
+    ["ChatGPT", "https://chatgpt.com/", "chatGPT.png"],
 ]
 
 function searchProjects(query) {
@@ -31,7 +31,7 @@ function searchProjects(query) {
     unsortedResults.sort((a, b) => {return a[1] - b[1]});
 
     for (r of unsortedResults) {
-        results.push("<a class='search-link' href='" + r[2] + "'><div class='search-item-text'>" + r[0] + "</div></a>");
+        results.push("<a class='search-link' target='_blank' href='" + r[2] + "'><div class='search-item-text'>" + r[0] + "</div></a>");
     }
     return results;
 }

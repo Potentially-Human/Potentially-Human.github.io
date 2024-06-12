@@ -1,0 +1,28 @@
+.enable-webcam {
+    width: 60px; 
+    height: 60px; 
+    position: absolute; 
+    border-radius: 30px;
+    border: 1px solid #e6edf3;
+    background-color: rgba(0, 0, 0, 0);
+    top: 210px; 
+    left: calc(50% - 30px);
+    background-image: url("assets/webcam.png");
+    background-size: 58px;
+}
+
+.enable-webcam:hover {
+    cursor: pointer;
+}
+
+#cam-view {
+    text-align: center;
+}
+
+.webcam {
+    left: calc(50% - 320px);
+    width: 640px;
+    height: 480px;
+    border: 1px solid rgba(151, 159, 171, 0.5);
+    border-radius: 5px;
+}
