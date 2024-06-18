@@ -5,10 +5,11 @@
     border-radius: 30px;
     border: 1px solid #e6edf3;
     background-color: rgba(0, 0, 0, 0);
-    top: 210px; 
+    top: 230px; 
     left: calc(50% - 30px);
     background-image: url("assets/webcam.png");
     background-size: 58px;
+    z-index: 1;
 }
 
 .enable-webcam:hover {
@@ -25,4 +26,102 @@
     height: 480px;
     border: 1px solid rgba(151, 159, 171, 0.5);
     border-radius: 5px;
+    position: absolute; 
+}
+
+.identified-object {
+    position: relative;
+    z-index: 1; 
+}
+
+.confidence-box {
+    background-color: rgba(200, 100, 100, 0.6);
+    margin: 0px; 
+}
+
+.highlighter {
+    background-color: rgba(100, 200, 100, 0.6);
+    position: relative; 
+}
+
+.loading.webcam {
+    background-color: #e6edf33c;
+    width: 640px; 
+    height: 480px; 
+    text-align: center;
+    align-content: center;
+    z-index: 3;
+}
+
+.loading-circle {
+    background-color: #e6edf3;
+    height: 20px; 
+    width: 20px; 
+    border-radius: 10px;
+    position: relative;
+    animation-duration: 4s;
+    animation-name: loading-animation; 
+    animation-iteration-count: infinite;
+    position: absolute; 
+    top: 230px; 
+}
+
+.loading-text {
+    position: relative; 
+    top: 60px; 
+    font-size: 20px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: loading-text-animation;
+    animation-direction: alternate;
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: translateY(-40px);
+        opacity: 0.5; 
+    }
+    25% {
+        
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(40px);
+        opacity: 0.5
+    }
+    75% {
+        
+        opacity: 1; 
+    }
+    100% {
+        transform: translateY(-40px);
+        opacity: 0.5; 
+    }
+}
+
+@keyframes loading-text-animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1; 
+        z-index: 1;
+    }
+    100% {
+        opacity: 0; 
+        display: none; 
+        z-index: -10000000000;
+    }
+}
+
+.completed-loading {
+    animation-name: fade-out; 
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
 }

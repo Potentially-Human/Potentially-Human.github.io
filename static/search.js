@@ -2,6 +2,7 @@
 
 var projects = [
     ["Home", "index.html"],
+    ["Object detector", "smart-camera.html"],
 ]
 
 var tools = [

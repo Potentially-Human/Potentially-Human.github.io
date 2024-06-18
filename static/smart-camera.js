@@ -32,14 +32,14 @@ function enableWebcam(event) {
   
 function predictWebcam() {
     model.detect(webcam).then((predictions) => {
+        // console.log(predictions);
         for (object of identifiedObjects) {
-            camView.remove(object);
+            camView.removeChild(object);
         }
         identifiedObjects.splice(0);
 
         for (let c = 0; c < predictions.length; c++) {
-            if (predictions[c].score > 0.66) {
-                console.log(predictions);
+            if (predictions[c].score > 0.33) {
                 const div = document.createElement("div");
                 const p = document.createElement("p");
 
@@ -52,21 +52,38 @@ function predictWebcam() {
                 const highlighter = document.createElement("div"); 
                 highlighter.classList.add("highlighter");
 
+                highlighter.style.height = predictions[c].bbox[3] + "px"; 
+
                 div.appendChild(highlighter);
 
-                'left: ' + predictions[c].bbox[0] + 'px; top: '
+                div.style = 'left: calc(50% - 320px + ' + predictions[c].bbox[0] + 'px); top: '
                 + (predictions[c].bbox[1] - 20) + 'px; width: ' 
-                + (predictions[c].bbox[2] + 20) + 'px; height: '
-                + predictions[c].bbox[3] + 'px;';
+                + (predictions[c].bbox[2]) + 'px; height: '
+                + (predictions[c].bbox[3] + 20) + 'px;';
 
                 identifiedObjects.push(div);
                 camView.appendChild(div);
 
             }
         }
+
+        window.requestAnimationFrame(predictWebcam);
     });
 }
 
+function displayLoading() {
+    for (var i = 0; i < 5; i++) {
+        const div = document.createElement("div"); 
+        div.style.left = "calc(50% - " + ((i - 2) * 30) + "px";
+        div.style.animationDelay = (-4 - i) / 2 + "s"; 
+        document.querySelector(".loading").appendChild(div);
+        div.classList.add("loading-circle");
+    }
+}
+
+displayLoading();
+
 cocoSsd.load().then(function (loadedModel) {
     model = loadedModel;
+    document.querySelector(".loading").classList.add("completed-loading"); 
 });

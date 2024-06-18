@@ -331,16 +331,3 @@ a:hover {
     text-decoration: underline;
 }
 
-.confidence-box {
-    background-color: rgba(200, 100, 100, 0.3);
-}
-
-.highlighter {
-    background-color: rgba(100, 200, 100, 0.2);
-    position: relative;
-    top: 20px; 
-}
-
-.identified-objects {
-    position: absolute;
-}
