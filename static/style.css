@@ -1,10 +1,15 @@
+@font-face {
+    font-family: Noir;
+    src: url("assets/Noir_regular.otf");
+}
+
 body {
     background-color: #010409;
     color: #e6edf3;
     font-weight: 400;
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Noir; 
 }
 
 @keyframes navbar-animation {
@@ -44,14 +49,13 @@ body {
 
 .sidenav {
     position: absolute;
-    height: calc(100% - 44px);
+    height: calc(100% - 40px);
     padding: 20px;
-    border: 2px solid darkslategray; 
     width: fit-content;
     min-width: 30%;
     z-index: 20;
     display: none; 
-    background-color: #010409;
+    background-color: #01040977;
 }
 
 .sidenav-header {

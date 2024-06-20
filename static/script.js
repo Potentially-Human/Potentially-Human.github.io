@@ -109,7 +109,7 @@ window.addEventListener("load", (event) => {
         }
     });
 
-    document.querySelector(".content").addEventListener("click", (event) => {
+    document.querySelector(".content-wrapper").addEventListener("click", (event) => {
         document.querySelector(".tools-window").style.display = "none";
     })
 
