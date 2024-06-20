@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="static/index.css">
+    <link rel="stylesheet" href="static/about.css">
     <link rel="shortcut icon" href="static/assets/icon.ico" type="image/x-icon">
     <script src="static/search.js"></script>
     <script src="static/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+
 </head>
 <body>
     <div class="navbar">
         <div class="navbar-container">
             <div class="menu-icon button"></div>
             <div class="logo"></div>
-            <h3 class="project-title">Home</h3>
+            <h3 class="project-title">About/Contacts</h3>
             <div class="search-window">
                 <div class="search-area">
                     <div class="search-icon button"></div>
@@ -26,9 +31,6 @@
                     
                 </ul>
             </div>
-            <h3 class="about">
-                <a href="about.html" class="about-text">About/Contacts</a>
-            </h3>
             <div class="tools button">
                 <div class="tools-icon"></div>
                 <div class="tools-text">Tools</div>
@@ -41,10 +43,13 @@
         </div>
     </div>
 
-    <div class="content-wrapper" style="padding: 0px; width: 100%;">
-        <video src="static/assets/bg-video.mp4" style="width: 100%;" loop autoplay class="background-video"></video>
-        <h1 class="title">Potential Human</h1>
-        <div class="photo"></div>
+    <div class="content-wrapper">
+        <div class="content">
+            <h2 class="about-header">Who Am I?</h2>
+            Just a random guy. Just know there's someone behind this website. 
+            <h2 class="about-header">Contacts</h2>
+            No contacts for you. All that social media nonsense is to annoying to use!
+        </div>
     </div>
 
     <div class="sidenav">

@@ -35,3 +35,19 @@
     background-image: url("assets/icon-background.png");
     border-radius: 100px;
 }
+
+.about {
+    position: absolute; 
+    top: 0px; 
+    left: 500px;
+    max-width: 16%; 
+}
+
+.about-text {
+    text-decoration: none !important;
+    color: #e6edf3 !important;
+}
+
+.about-text:hover {
+    text-decoration: underline !important;
+}
