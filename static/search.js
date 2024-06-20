@@ -3,7 +3,8 @@
 var projects = [
     ["Home", "index.html"],
     ["Object detector", "smart-camera.html"],
-    ["About/Contacts", "about.html"]
+    ["About/Contacts", "about.html"],
+    ["3D Tetris", "3d-tetris.html"]
 ]
 
 var tools = [
@@ -33,7 +34,7 @@ function searchProjects(query) {
     unsortedResults.sort((a, b) => {return a[1] - b[1]});
 
     for (r of unsortedResults) {
-        results.push("<a class='search-link' target='_blank' href='" + r[2] + "'><div class='search-item-text'>" + r[0] + "</div></a>");
+        results.push("<a class='search-link'" + (r[2].includes("://") ? "target='_blank'" : "") + " href='" + r[2] + "'><div class='search-item-text'>" + r[0] + "</div></a>");
     }
     return results;
 }
