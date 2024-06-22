@@ -4,7 +4,8 @@ var projects = [
     ["Home", "index.html"],
     ["Object detector", "smart-camera.html"],
     ["About/Contacts", "about.html"],
-    ["3D Tetris", "3d-tetris.html"]
+    ["3D Tetris", "3d-tetris.html"],
+    ["Timer", "timer.html"],
 ]
 
 var tools = [

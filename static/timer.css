@@ -1,0 +1,48 @@
+.content {
+    align-content: center;
+    text-align: center;
+    left: 20px;
+}
+
+.timer-text {
+    font-size: 100px;
+}
+
+.second-timer-text {
+    font-size: 50px; 
+    position: absolute; 
+    top: calc(50% + 10px); 
+    left: 50%; 
+}
+
+.timer-text:hover {
+    cursor: pointer; 
+}
+
+.second-timer-text:hover {
+    cursor: pointer; 
+}
+
+.timer-settings {
+    width: calc(29% - 84px);
+    right: 20px;
+    position: absolute;
+    border: 1px solid darkslategray;
+    min-height: calc(100% - 62px);
+    padding: 20px;
+}
+
+.time-setting {
+    border: 1px solid darkslategray; 
+    background-color: #010409;
+    color: #e6edf3;
+    font-size: 20px; 
+    font-family: Noir; 
+    padding: 5px; 
+    border-radius: 5px;
+}
+
+.time-setting:hover {
+    cursor: pointer; 
+    background-color: #373c45;
+}
