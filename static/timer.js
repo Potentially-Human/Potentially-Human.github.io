@@ -9,6 +9,7 @@ var justSelected = false;
 var justSelected2 = false; 
 var audioIndex = 0; 
 var audioList = ["Void_.mp3", "Windy Hill.mp3"]; 
+var currentAudio; 
 
 var justOpenedSelection = false;
 var selectionOpen = false; 
@@ -33,8 +34,12 @@ function reduceTime() {
     updateTimeText();  
     if (countingTime === 0) {
         stopTimer();
+        if (currentAudio != undefined) {
+            currentAudio.pause();
+        }
         var audio = new Audio("static/assets/" + document.getElementById("selected").innerHTML + ".mp3"); 
         audio.play();
+        currentAudio = audio; 
         if (time2 > 0) {
             const c = time; 
             time = time2; 
@@ -101,9 +106,16 @@ window.addEventListener("load", (event) => {
         }
         startTimer();
     });
+
     document.querySelector(".stop-timer").addEventListener("click", (e) => {
         stopTimer();
     });
+
+    document.querySelector(".stop-audio").addEventListener("click", (e) => {
+        if (currentAudio != undefined) {
+            currentAudio.pause(); 
+        }
+    })
 
     window.addEventListener("keydown", (e) => {
         if (parseInt(e.key) || e.key == "0") {
