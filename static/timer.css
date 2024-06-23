@@ -46,3 +46,21 @@
     cursor: pointer; 
     background-color: #373c45;
 }
+
+#options {
+    padding: 0px !important; 
+}
+
+.option-inner {
+    padding: 5px; 
+}
+
+#options:hover {
+    cursor: default !important;
+    background-color: #010409; 
+}
+
+.option:hover {
+    cursor: pointer; 
+    background-color: #373c45;
+}

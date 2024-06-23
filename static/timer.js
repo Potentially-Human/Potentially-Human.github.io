@@ -8,7 +8,10 @@ var timerSelected2 = false;
 var justSelected = false;
 var justSelected2 = false; 
 var audioIndex = 0; 
-var audioList = ["static/assets/Void_.mp3"]; 
+var audioList = ["Void_.mp3", "Windy Hill.mp3"]; 
+
+var justOpenedSelection = false;
+var selectionOpen = false; 
 
 function startTimer(t = -1) {
     if (time > 0 && timerRunning == false) {
@@ -30,7 +33,7 @@ function reduceTime() {
     updateTimeText();  
     if (countingTime === 0) {
         stopTimer();
-        var audio = new Audio(audioList[audioIndex]); 
+        var audio = new Audio("static/assets/" + document.getElementById("selected").innerHTML + ".mp3"); 
         audio.play();
         if (time2 > 0) {
             const c = time; 
@@ -78,6 +81,10 @@ function calcSeconds(s) {
     minutes = parseInt(s[3] + s[4]);
     seconds = parseInt(s[6] + s[7]);
     return Math.min(3600 * hours + 60 * minutes + seconds, 359999); 
+}
+
+function changeOption(text) {
+    document.getElementById("selected").innerHTML = text; 
 }
 
 window.addEventListener("load", (event) => {
@@ -185,7 +192,7 @@ window.addEventListener("load", (event) => {
                 startTimer();
             }
         } else {
-            console.log(e.key); 
+            //console.log(e.key); 
         }
     });
 
@@ -241,5 +248,34 @@ window.addEventListener("load", (event) => {
                 justSelected2 = false; 
             }
         }
+        if (!justOpenedSelection) {
+            document.getElementById("options").style.display = "none"; 
+            selectionOpen = false; 
+        } else {
+            justOpenedSelection = false; 
+        }
     }); 
+
+    for (var i = 0; i < audioList.length; i++) {
+        const div = document.createElement("div");
+        div.classList.add("option");
+        const divInner = document.createElement("div"); 
+        divInner.innerHTML = audioList[i].replace(".mp3", "");
+        divInner.classList.add("option-inner"); 
+        div.addEventListener("click", function(e) {
+            changeOption(this.innerText);
+        });
+        div.appendChild(divInner);
+        document.getElementById("options").appendChild(div);
+    }
+
+    document.getElementById("selected").innerHTML = audioList[0].replace(".mp3", "");
+
+    document.getElementById("selected").addEventListener("click", (e) => {
+        if (!selectionOpen) {
+            document.getElementById("options").style.display = "block"; 
+            justOpenedSelection = true;
+            selectionOpen = true;
+        } 
+    });
 });
