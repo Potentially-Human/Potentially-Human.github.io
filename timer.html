@@ -45,14 +45,18 @@
             <h1 class="second-timer-text">00:00:00</h1>
         </div>
         <div class="timer-settings">
-            <button class="start-timer time-setting">Start!</button>
-            <button class="stop-timer time-setting">Stop!</button>
-            <button class="stop-audio time-setting">I know!</button>
+            <button class="start-timer time-setting">Start</button>
+            <button class="stop-timer time-setting">Pause</button>
+            <button class="reset-timer time-setting">Reset</button>
+            <button class="stop-audio time-setting">I know...</button>
             <br><br>
             <label for="audio-select">Alarm Sound: </label>
             <div name="audio-select" id="audio-select">
                 <div id="selected"  class="time-setting"></div>
-                <div id="options" style="display: none;"  class="time-setting"></div>
+                <div id="options" style="display: none;"  class="time-setting">
+                    <div class="option"><div class="option-inner" id="random" onclick="changeOption(this.innerText)">Random</div></div>
+                    <div class="option"><div class="option-inner" id="silent" onclick="changeOption(this.innerText)">None</div></div>
+                </div>
             </div>
         </div>
     </div>

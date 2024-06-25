@@ -37,9 +37,17 @@ function reduceTime() {
         if (currentAudio != undefined) {
             currentAudio.pause();
         }
-        var audio = new Audio("static/assets/" + document.getElementById("selected").innerHTML + ".mp3"); 
-        audio.play();
-        currentAudio = audio; 
+        if (document.getElementById("selected").innerHTML == "None") {
+            
+        } else if (document.getElementById("selected").innerHTML == "Random") {
+            var audio = new Audio("static/assets/" + audioList[Math.floor(Math.random() * audioList.length)]); 
+            audio.play();
+            currentAudio = audio; 
+        } else {
+            var audio = new Audio("static/assets/" + document.getElementById("selected").innerHTML + ".mp3"); 
+            audio.play();
+            currentAudio = audio; 
+        }
         if (time2 > 0) {
             const c = time; 
             time = time2; 
@@ -114,6 +122,13 @@ window.addEventListener("load", (event) => {
     document.querySelector(".stop-audio").addEventListener("click", (e) => {
         if (currentAudio != undefined) {
             currentAudio.pause(); 
+        }
+    })
+
+    document.querySelector(".reset-timer").addEventListener("click", (e) => {
+        if (!timerRunning) {
+            countingTime = time; 
+            updateTimeText();
         }
     })
 
@@ -281,7 +296,7 @@ window.addEventListener("load", (event) => {
         document.getElementById("options").appendChild(div);
     }
 
-    document.getElementById("selected").innerHTML = audioList[0].replace(".mp3", "");
+    document.getElementById("selected").innerHTML = "Random";
 
     document.getElementById("selected").addEventListener("click", (e) => {
         if (!selectionOpen) {
