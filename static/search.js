@@ -13,6 +13,7 @@ var tools = [
     ["Dalle-3", "https://www.bing.com/images/create", "image-generator.png"],
     ["Copilot", "https://copilot.microsoft.com/", "copilot.png"],
     ["ChatGPT", "https://chatgpt.com/", "chatGPT.png"],
+    ["Photoshop Online", "https://www.photopea.com/", "photoshop.png"]
 ]
 
 function searchProjects(query) {
