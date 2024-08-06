@@ -3,6 +3,7 @@
     left: 50%;
     width: 500px;
     font-size: 90px;
+    color: #e6edf3;
 }
 
 .content-wrapper {
@@ -50,4 +51,24 @@
 
 .about-text:hover {
     text-decoration: underline !important;
+}
+
+body {
+    color: black !important;
+}
+
+a {
+    color:  #003b98 !important;
+}
+
+.tools-window {
+    background-color: #c9c9c9ab !important;
+}
+
+.sidenav {
+    background-color: #c9c9c9ab !important;
+}
+
+.navbar {
+    color: #e6edf3 !important;
 }
