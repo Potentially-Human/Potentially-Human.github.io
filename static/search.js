@@ -6,6 +6,7 @@ var projects = [
     ["About/Contacts", "about.html"],
     ["3D Tetris", "3d-tetris.html"],
     ["Timer", "timer.html"],
+    ["Emojis", "emojis.html"]
 ]
 
 var tools = [
