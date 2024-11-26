@@ -1,0 +1,1 @@
+['of', 'to', 'in', 'is', 'on', 'by', 'it', 'or', 'be', 'at', 'as', 'an', 'we', 'us', 'if', 'my', 'do', 'no', 'he', 'up', 'so', 'pm', 'am', 'me', 're', 'go', 'cd', 'tv', 'pc']

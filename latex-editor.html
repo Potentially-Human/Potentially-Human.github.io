@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Latex Editor</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/latex-editor.css">
+    <link rel="shortcut icon" href="static/assets/icon.ico" type="image/x-icon">
+    <script src="static/search.js"></script>
+    <script src="static/script.js"></script>
+    <script src="static/latex-editor.js"></script>
+    <script src="static/latex-symbol-selector-generator.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="menu-icon button"></div>
+            <div class="logo"></div>
+            <h3 class="project-title">Latex Editor</h3>
+            <div class="search-window">
+                <div class="search-area">
+                    <div class="search-icon button"></div>
+                    <input type="text" class="search-bar" placeholder="Search Projects and Tools">
+                </div>
+
+                <ul class="search-results">
+                    
+                </ul>
+            </div>
+            <div class="tools button">
+                <div class="tools-icon"></div>
+                <div class="tools-text">Tools</div>
+                <div class="tools-window">
+                    <ul class="tools-list">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <textarea name="editor" id="editor-textarea" placeholder="Type your math here..." spellcheck="false"></textarea>
+            <div id="editor-displayarea"></div>
+            <div id="symbol-selectors"></div>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <div class="sidenav-header">
+            <h3 style="margin: 0px;">Projects</h3>
+            <div class="close-sidebar button"></div>
+        </div>
+        
+        <div class="sidenav-content">
+            <ul class="sidenav-links">
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+</body>
+</html>
